@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<title>Calculator</title>
+<style>
+    #calculator {background-color: darkslategray; 
+    height: 500px; width: 370px;}
+    #container {display: flex; justify-content: center; 
+    align-items: center;}
+    #screen {background-color: ghostwhite; width: 300px; 
+    height: 90px; position:relative; top: 20px; left: 35px;
+    display: flex; justify-content: flex-end;}
+    #screenContent {font-size: 80px; position:relative; 
+    right: 7px;}
+    #buttonGrid { display: grid; grid-template-columns: 
+    repeat(4, 1fr); grid-template-rows: repeat(4, 1fr);
+    height: 350px; width: 300px; background-color:gold;
+    position: relative; left: 35px; top: 30px;}
+    button {background-color: khaki; font-size: large; color: blue;}
+    .operators {background-color: mediumslateblue; color: black;}
+     #equal {background-color: tomato; font-size: 48px; color: green;}
+     .letter {color: darkred;}
+</style>
+<body>
+<div id = container>
+    <div id= calculator>
+<div id =screen>
+<div id = screenContent>
+   </div>
+</div>
+<div id = buttonGrid>
+    <button id = add class = operators >+</button>
+    <button id = one class = num>1</button>
+<button id = two class = num class>2</button>
+<button id = three class = num>3</button>
+<button id = subtract class = operators>-</button>
+<button id = four class = num>4</button>
+<button id = five class = num>5</button>
+<button id = six class = num>6</button>
+<button id = multiply class = operators>*</button>
+<button id = seven class = num>7</button>
+<button id = eight class = num>8</button>
+<button id = nine class = num>9</button>
+<button id = divide class = operators>/</button>
+<button id = zero class = num>0</button >
+<button id = clear class = letter>C</button>
+<button id = equal>=</button>
+</div>
+</div>
+</div>
+ <script src=calc.js></script>   
+</body>
