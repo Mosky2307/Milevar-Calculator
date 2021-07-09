@@ -1,8 +1,16 @@
-document.getElementById("add").disabled = true;
-document.getElementById("subtract").disabled = true;
-document.getElementById("multiply").disabled = true;
-document.getElementById('equal').disabled = true;
-document.getElementById('divide').disabled = true;
+let opBox = document.querySelector('#opBox');
+let equal = document.createElement('button');
+equal.setAttribute('id','equal');
+equal.textContent = "="
+let plus = document.createElement('button');
+let fraction = document.createElement('button');
+fraction.setAttribute('id','divide');
+fraction.textContent = "/";
+
+
+
+
+
 
 let inArray = "";
 
@@ -42,6 +50,19 @@ function final(num1, num2, num3) {
        
        document.querySelectorAll('.num').forEach(item => {
         item.addEventListener('click', () => {
+         if (calcArray.length === 0) {
+          plus.setAttribute('id','plus');
+plus.textContent = "+";
+          opBox.appendChild(plus);}
+          else if (calcArray.length === 1) {
+            fraction.setAttribute('id','divide');
+fraction.textContent = "/";
+          opBox.appendChild(fraction);
+          } else if (calcArray.length ===2) {
+            equal.setAttribute('id','equal');
+            equal.textContent = "=";
+                      opBox.appendChild(equal);
+          }
             inArray += item.textContent;
             if (screenArray[0] === 0) {
                 screenArray = []
@@ -55,37 +76,19 @@ function final(num1, num2, num3) {
             setscreen();
            
           }
-          if (calcArray.length === 1) {
-            document.getElementById('divide').disabled = false;
-            document.getElementById("add").disabled = true;
-          } else if (calcArray.length === 2) {
-            document.getElementById('equal').disabled = false;
-          }
-          else
-          
-          {
-          document.getElementById("add").disabled = false;}
-        })
+         
       });
 calcArray = [];
 
 
-let plus = document.querySelector("#add");
 
 plus.addEventListener('click', () => { 
-        
+       opBox.removeChild(plus)
         calcArray.push(inArray);
         inArray = "";
     screenArray += "+";
-    setscreen();
-    document.getElementById("add").disabled = true;
- 
- if (screenContent.textContent.length > 7) {
-    let newFont = 80;
-   for (let i = 7; i<screenContent.textContent.length; i++) 
-   newFont *= 7/8;
-   screenContent.style.fontSize = `${newFont}px`}
-    })
+    setscreen();}
+       )})
 
 
 
@@ -94,9 +97,8 @@ plus.addEventListener('click', () => {
 
 
 
-      let equal = document.querySelector('#equal');
       equal.addEventListener('click', () => {
-          
+        opBox.removeChild(equal)
               calcArray.push(inArray)
               screenArray = final(calcArray[0], calcArray[1], calcArray[2]);
               setscreen();
@@ -105,25 +107,15 @@ plus.addEventListener('click', () => {
                for (let i = 7; i<screenContent.textContent.length; i++) 
                newFont *= 7/8;
                screenContent.style.fontSize = `${newFont}px`};
-               document.getElementById('equal').disabled = "true";
                inArray = "";
                calcArray = [];
     })
 
-    let clear = document.querySelector('#clear');
-clear.addEventListener('click', () => 
-    {screenArray = [0];
-    calcArray = [];
-    setscreen();
-    });
+    
 setscreen();
-let fraction = document.querySelector('#divide');
 fraction.addEventListener('click', () => {
-    calcArray.push(inArray);
+  opBox.removeChild(fraction)
+  calcArray.push(inArray);
         inArray = "";
     screenArray += "/"
-    setscreen()
-    document.getElementById('divide').disabled = true;
-});
-
-console.log(calcArray)
+    setscreen() })

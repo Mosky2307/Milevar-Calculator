@@ -2,22 +2,29 @@
 <title>Calculator</title>
 <style>
     #calculator {background-color: darkslategray; 
-    height: 500px; width: 370px;}
+    height: 500px; width: 370px; }
     #container {display: flex; justify-content: center; 
     align-items: center;}
     #screen {background-color: ghostwhite; width: 300px; 
     height: 90px; position:relative; top: 20px; left: 35px;
     display: flex; justify-content: flex-end;}
     #screenContent {font-size: 80px; position:relative; 
-    right: 7px;}
+    right: 7px; display: flex; }
     #buttonGrid { display: grid; grid-template-columns: 
-    repeat(4, 1fr); grid-template-rows: repeat(4, 1fr);
-    height: 350px; width: 300px; background-color:gold;
+    repeat(3, 1fr); grid-template-rows: repeat(3, 1fr);
+    height: 200px; width: 300px; background-color:gold;
     position: relative; left: 35px; top: 30px;}
     button {background-color: khaki; font-size: large; color: blue;}
     .operators {background-color: mediumslateblue; color: black;}
-     #equal {background-color: tomato; font-size: 48px; color: green;}
+     #equal {background-color: tomato; font-size: 48px; color: green; width: 250px; height: 100px;}
      .letter {color: darkred;}
+     #zero {width: 100px; height: 66.66px }
+     #zeroBox {display: flex; justify-content: center; align-items: center; height: 70px; position: relative; top: 30px;}
+     #opBox {width:314px; height: 100px; position: relative; top: 30px; left: 60px;}
+     #plus {font-size: 48px; color: black; width: 250px; height: 100px; background-color: blue;}
+     #divide {font-size: 48px; color: red; width: 250px; height: 100px; background-color: greenyellow;}
+     p {display: flex; justify-content: center; align-items: center; font-size: 23px; font-family: 'Courier New', Courier, monospace; width: 500px;}
+     #flex {display: flex; justify-content: center; align-items: center;}
 </style>
 <body>
 <div id = container>
@@ -27,24 +34,29 @@
    </div>
 </div>
 <div id = buttonGrid>
-    <button id = add class = operators >+</button>
+   
     <button id = one class = num>1</button>
 <button id = two class = num class>2</button>
 <button id = three class = num>3</button>
-<button id = subtract class = operators>-</button>
 <button id = four class = num>4</button>
 <button id = five class = num>5</button>
 <button id = six class = num>6</button>
-<button id = multiply class = operators>*</button>
 <button id = seven class = num>7</button>
 <button id = eight class = num>8</button>
 <button id = nine class = num>9</button>
-<button id = divide class = operators>/</button>
-<button id = zero class = num>0</button >
-<button id = clear class = letter>C</button>
-<button id = equal>=</button>
+</div>
+<div id= zeroBox>
+<button id = zero class = num>0</button>
+</div>
+<div id = opBox>
+
 </div>
 </div>
+</div>
+<div id=flex>
+<p>
+    The total combined amount of numbers you can have is 5. I could change it but I'm too lazy sorry. :(
+</p>
 </div>
  <script src=calc.js></script>   
 </body>
