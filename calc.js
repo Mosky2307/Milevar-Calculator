@@ -67,16 +67,19 @@ fraction.textContent = "/";
             if (screenArray[0] === 0) {
                 screenArray = []
             };
-            if (screenArray.length < 7) {
-          screenArray += item.textContent;
-          setscreen();} else if 
-          (screenArray.length === undefined) {
+        screenArray += item.textContent;
+          setscreen();
+          if (screenArray.length === undefined) {
             screenArray = []
             screenArray += item.textContent;
             setscreen();
            
           }
-         
+          if (screenContent.textContent.length > 7) {
+            let newFont = 80;
+           for (let i = 7; i<screenContent.textContent.length; i++) 
+           newFont *= 7/8;
+           screenContent.style.fontSize = `${newFont}px`};
       });
 calcArray = [];
 
