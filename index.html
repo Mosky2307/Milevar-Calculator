@@ -23,8 +23,8 @@
      #opBox {width:314px; height: 100px; position: relative; top: 30px; left: 60px;}
      #plus {font-size: 48px; color: black; width: 250px; height: 100px; background-color: blue;}
      #divide {font-size: 48px; color: red; width: 250px; height: 100px; background-color: greenyellow;}
-     p {display: flex; justify-content: center; align-items: center; font-size: 23px; font-family: 'Courier New', Courier, monospace; width: 500px;}
-     #flex {display: flex; justify-content: center; align-items: center;}
+     p, h1, h2 {display: flex; justify-content: center; align-items: center; font-size: 23px; font-family: 'Courier New', Courier, monospace; width: 500px;}
+     .flex {display: flex; justify-content: center; align-items: center;}
 </style>
 <body>
 <div id = container>
@@ -53,8 +53,32 @@
 </div>
 </div>
 </div>
-<div id=flex>
+<div class=flex>
+<h1>
+    <strong>
+        What is this?
+    </strong>
+</h1>
 
+</div>
+<div class = flex>
+<p>
+    You provide a number, then add to it a fraction. But rather than the fraction being of 1, or of the provided number, it's a fraction of the answer you will get
+</p>
+
+</div>
+<div class = flex>
+    <h2>
+        <strong>
+            Example
+        </strong>
+    </h2>
+    </div>
+    <div class = flex>
+        <p>
+            4 + 1/5 = 5, because 1 is 1/5 of the answer
+        </p>
+    </div>
 </div>
  <script src=calc.js></script>   
 </body>

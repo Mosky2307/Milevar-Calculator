@@ -78,8 +78,10 @@ fraction.textContent = "/";
           if (screenContent.textContent.length > 7) {
             let newFont = 80;
            for (let i = 7; i<screenContent.textContent.length; i++) 
-           newFont *= 7/8;
-           screenContent.style.fontSize = `${newFont}px`};
+           {newFont *= 7/8;};
+           screenContent.style.fontSize = `${newFont}px`;
+          }
+          
       });
 calcArray = [];
 
@@ -105,6 +107,8 @@ plus.addEventListener('click', () => {
               calcArray.push(inArray)
               screenArray = final(calcArray[0], calcArray[1], calcArray[2]);
               setscreen();
+              let newFont = 80;
+              screenContent.style.fontSize = `${newFont}px`
               if (screenContent.textContent.length > 7) {
                 let newFont = 80;
                for (let i = 7; i<screenContent.textContent.length; i++) 
