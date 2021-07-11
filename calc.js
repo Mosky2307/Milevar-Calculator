@@ -67,10 +67,14 @@ fraction.textContent = "/";
             if (screenArray[0] === 0) {
                 screenArray = []
             };
+            if (screenArray.length === undefined) {
+              screenArray = [];
+              screenArray += item.textContent;
+              setscreen();} else {
         screenArray += item.textContent;
-          setscreen();
+          setscreen();}
           if (screenArray.length === undefined) {
-            screenArray = []
+            screenArray = [];
             screenArray += item.textContent;
             setscreen();
            
